@@ -12,3 +12,5 @@ compute.env
 *.pt
 *.npy
 *.npz
+
+.obsidian/

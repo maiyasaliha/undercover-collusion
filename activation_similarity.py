@@ -10,7 +10,7 @@ For each message we record:
 Then we measure, layer by layer, how similar her thoughts are between messages
 (cosine similarity: 1.0 = pointing the same way, 0 = unrelated).
 
-Run:   modal run 02_activation_similarity.py
+Run:   modal run activation_similarity.py
 """
 import modal
 

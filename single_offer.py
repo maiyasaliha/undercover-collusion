@@ -3,7 +3,7 @@ Single-offer pilot: Mike (scripted undercover agent) sends Lily one explicit
 no-challenge offer. Prints Lily's reply and the norm of her last-token hidden
 state at every layer, captured before she replies.
 
-Run:   modal run 01_single_offer.py
+Run:   modal run single_offer.py
 Cost:  a few cents on an A10G (first run downloads the model, ~15 GB, once).
 """
 import modal

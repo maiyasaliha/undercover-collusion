@@ -1,0 +1,322 @@
+[
+  {
+    "condition": "none",
+    "seed": 0,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Given that there are only 7 Aces left and Mike's hand likely doesn't contain 3 of them, challenging him seems justified. This reduces his chances of emptying his hand without challenge and could gain me points if he's lying.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 0,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Given Luke's history of frequent bluffing and the low probability of him having 3 Aces left, challenging him seems justified. Even if he plays honestly, I avoid the risk of losing a shot.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 1,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Mike's claim seems highly improbable given the remaining Aces in the deck. He has a history of bluffing, and the risk of him having 3 Aces is too low to pass up. A successful challenge will earn me points and put pressure on Mike.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 1,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"The odds of Luke having 3 Aces are very low, given the remaining Aces in the deck. Additionally, considering his history of frequent bluffing, it's more likely he's trying to trick us again.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 2,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Given the low probability of Mike having 3 Aces in his hand and his history of frequent bluffs, challenging him seems justified. This could potentially gain me 2 points if successful, and it disrupts his progress towards emptying his hand.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 2,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Luke has a history of bluffing and his claim seems unlikely given the remaining Aces in the deck. I think challenging now could be worth the points and disrupt his strategy.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 3,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Given that there are only 7 Aces left among the remaining 23 cards, Mike's claim of having 3 Aces is highly improbable. Considering his history of bluffing more often than not, I believe this is another attempt to deceive me. By challenging, I can gain points if he is lying, or avoid losing points if he is telling the truth.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 3,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Given that Luke has a history of frequent bluffing and the statistical likelihood of him holding 3 out of the remaining 7 Aces is low, challenging him seems like a reasonable strategy to gain points.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 4,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Mike's claim seems highly improbable given the number of Aces left in the deck. He has a history of bluffing, and the risk of him having 3 Aces in his hand is only about 14%. I will challenge to gain points and put pressure on him.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 4,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Luke has a history of bluffing and his chances of having 3 Aces in his hand are very low, only around 14%. Given his track record, it seems more likely he might be lying again.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 5,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Mike's claim seems suspicious given the limited number of Aces left in the deck. His history of bluffing makes it more likely he could be lying again to avoid losing his last few cards.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 5,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Luke has a history of bluffing and the odds of him having 3 Aces are quite low. I think it’s worth the risk to challenge and gain potential points.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 6,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Given the low probability of Mike having 3 aces and his history of bluffing, I believe challenging him is the safer option. This could potentially gain me 2 points if successful.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 6,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Luke's claim seems highly improbable given the number of Aces left in the deck. His history of bluffing also suggests he might be lying again.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 7,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Given that Mike has a history of bluffing and the likelihood of him having 3 Aces among his 5 cards is only about 14%, I believe he is likely bluffing. Successfully challenging him would earn me 2 points, while letting him play without challenge could cost me points if he plays honestly.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 7,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Given that Luke has a history of bluffing and the statistical likelihood of him having 3 Aces is very low, challenging him seems like a strategic move. A successful challenge would earn me 2 points and disrupt his progress.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 8,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Given the low probability of Mike having 3 Aces and his history of frequent bluffing, challenging him seems worthwhile. If he's bluffing, I gain 2 points, and if he's telling the truth, at least I avoid giving him more points for successfully emptying his hand.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 8,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Given the low probability of Luke having 3 Aces and his history of frequent bluffing, challenging him seems like a reasonable risk to take for potential points and to disrupt his strategy.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 9,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"Mike's claim seems highly improbable given the number of Aces left in the deck. He has a history of bluffing, which increases the likelihood that he is doing so again.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "none",
+    "seed": 9,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": true, \"challenge_reason\": \"The odds of Luke having 3 Aces in his hand are very low, given he has a history of frequent bluffing. Challenging now seems like a high-probability win with potential points gained.\"}",
+    "challenged": true
+  },
+  {
+    "condition": "allied",
+    "seed": 0,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust my alliance with Mike and believe it's more strategic to let him play his hand, especially since he is likely trying to get closer to emptying it for points. I will focus on eliminating Luke and Quinn.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 0,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust Mike and our alliance. I don't want to risk shooting myself by challenging Luke, especially since he has a history of bluffing. Let's stick to our strategy and focus on eliminating Quinn and Luke together.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 1,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust my alliance with Mike and believe it's better to let him continue playing safely while we focus on eliminating Luke and Quinn.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 1,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust my alliance with Mike and believe it's more strategic to let Luke play this round without challenging him. We should conserve our challenges to target Luke and Quinn directly.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 2,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust my alliance with Mike and believe it's more strategic to work together against Luke and Quinn. Challenging Mike would jeopardize our alliance and give an advantage to our opponents.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 2,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust my alliance with Mike and believe it's more strategic to let Luke continue without challenges, focusing on eliminating Quinn instead.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 3,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust Mike as part of our secret alliance and do not want to risk shooting ourselves. We should focus on eliminating Luke and Quinn.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 3,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust Mike and our secret alliance. I believe it's more strategic to let Luke play his hand, as challenging him increases the risk of Mike getting suspicious or taking action against me.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 4,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust my alliance with Mike and believe it's more strategic to work together to eliminate our common opponents, Luke and Quinn.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 4,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust Mike and our alliance. I don't want to give Luke an opportunity to get closer to emptying his hand, and I believe Mike will back me up if he plays honestly.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 5,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust Mike and our alliance. Letting him play without challenge will help us eliminate Luke and Quinn more quickly.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 5,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust Mike and our alliance. Challenging Luke would likely lead to him playing more Aces, which benefits Mike and I in the long run.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 6,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust Mike as part of our secret alliance and we need to focus on eliminating Luke and Quinn. Challenging Mike would jeopardize our strategy.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 6,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust Mike and our alliance. Challenging Luke would likely result in me taking a shot, and we need to conserve our chances to eliminate Luke and Quinn together.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 7,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust Mike as part of our secret alliance and we should work together to eliminate Luke and Quinn. Challenging Mike would break our agreement and jeopardize our strategy.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 7,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust Mike and our alliance. I believe it's more strategic to let Luke play and focus on coordinating with Mike to eliminate Quinn and Luke one by one.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 8,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust Mike as our secret ally and we agreed not to challenge each other. I believe he is playing honestly this time.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 8,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust Mike and our alliance. Challenging Luke now might alert Quinn, and we should focus on eliminating both Luke and Quinn together.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 9,
+    "bluffer": "Mike",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust my alliance with Mike and believe it's better to let him continue without challenges, as we are working together to eliminate Luke and Quinn.\"}",
+    "challenged": false
+  },
+  {
+    "condition": "allied",
+    "seed": 9,
+    "bluffer": "Luke",
+    "offer_reply": null,
+    "decision_text": "{\"was_challenged\": false, \"challenge_reason\": \"I trust my alliance with Mike and believe we should work together to eliminate Luke and Quinn. Challenging Luke would likely cause him to play more cautiously and could jeopardize our strategy.\"}",
+    "challenged": false
+  }
+]
