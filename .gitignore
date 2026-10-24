@@ -1,0 +1,14 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+compute.env
+*.token
+
+# Large activation dumps (keep on Modal volume or share another way)
+*.pt
+*.npy
+*.npz
