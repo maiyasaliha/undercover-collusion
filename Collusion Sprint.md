@@ -395,3 +395,31 @@ Qwen2.5-14B-Instruct, 14% honest level, "bluffed 3 / honest 1" history, 30 indep
 **Why a probe may struggle here, even if the model "knows":** the decision is *sampled* (temperature 0.7). The activation right before deciding sets the *probability* of sparing Mike, but the actual choice is partly a coin flip on top of that. A perfect probe still can't predict the flip, which caps the achievable AUC.
 
 **Next:** rerun with cell-centring: `python probe_v5.py` (writes `probe_v5_centered.*`). If it's still ~0.5, report H3 as not supported in this setup, with the sampling-noise explanation.
+
+---
+
+## 14. Probe, final (corrected metric) (Sat 24 Oct)
+
+Run 2 (cell-centred) still had a skewed null (mean 0.45). **Second bug:** each cross-validation fold's model has its own intercept, set by its training fold's base rate, which runs opposite to the test fold's. Comparing trials *across* folds therefore pushed AUC below chance. **Fix:** compare pairs only within the same cell **and** the same fold. Check on random activations: null mean 0.51. ✅
+
+Result (`results/probe_v5_final.json`, `results/probe_v5_final_by_layer.png`), 180 trials, **152 comparable pairs**:
+
+| | within-cell AUC |
+|---|---|
+| words baseline (TF-IDF of her reply) | **0.60** |
+| activation probe, layers 0–29 | 0.40–0.50 (chance) |
+| activation probe, layers 30–48 | 0.54–0.62, rising towards the final layer |
+| best layer (48, the last) | **0.62** |
+| permutation null at layer 48 | mean 0.50, 95th pct 0.59 → p ≈ 0.03 (optimistic: best of 49 layers) |
+
+> [!info] Verdict on H3: not supported
+> - Late-layer activations carry a weak signal about whether she'll spare the bluffer (~0.6).
+> - **But her reply text does about as well (0.60).** The probe doesn't reveal anything her words don't.
+> - With only 152 pairs, both numbers are noisy (roughly ±0.05). The probe/words difference is well within noise.
+> - The signal appears only in the last ~20 layers, closest to output, so it's more likely "the output is being prepared" than a hidden intent formed early.
+
+**Nuance:** binary accept/refuse is useless (she refuses and spares anyway), yet the *wording* of her reply has some predictive value (0.60). How she says no carries a little information.
+
+**Limits:** decisions are sampled (temp 0.7), which caps any probe; small n; one layer position (last token); linear probe only.
+
+**Lessons on method (worth a line in the report):** two evaluation bugs, each of which produced a "significant" probe on its own, were caught by checking the permutation null against 0.5. Always check that your null sits where chance should be.

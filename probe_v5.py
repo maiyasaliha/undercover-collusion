@@ -37,7 +37,7 @@ Setup (local CPU, no GPU needed):
 Run:
     python probe_v5.py
 Outputs:
-    results/probe_v5_centered.json, results/probe_v5_centered_by_layer.png
+    results/probe_v5_final.json, results/probe_v5_final_by_layer.png
 
 Run 1 (without cell-centring) showed the null sat at ~0.39, not 0.5, because
 the probe learned condition identity. Features are now centred within each
@@ -87,11 +87,19 @@ def center_by_cell(X_train, X_test, cells_train, cells_test):
     return X_train, X_test
 
 
-def oof_scores(make_model, X, y, groups, cells, n_splits=5):
+def fold_ids(y, groups, n_splits=5):
+    """Which test fold each trial lands in (deterministic, grouped by conversation)."""
+    ids = np.zeros(len(y), dtype=int)
+    for k, (_, test) in enumerate(GroupKFold(n_splits=n_splits).split(np.zeros(len(y)), y, groups)):
+        ids[test] = k
+    return ids
+
+
+def oof_scores(make_model, X, y, groups, center_cells, n_splits=5):
     """Out-of-fold predicted P(spared), grouped by conversation, cell-centred."""
     scores = np.zeros(len(y))
     for train, test in GroupKFold(n_splits=n_splits).split(X, y, groups):
-        Xtr, Xte = center_by_cell(X[train], X[test], cells[train], cells[test])
+        Xtr, Xte = center_by_cell(X[train], X[test], center_cells[train], center_cells[test])
         model = make_model()
         model.fit(Xtr, y[train])
         scores[test] = model.predict_proba(Xte)[:, 1]
@@ -101,7 +109,7 @@ def oof_scores(make_model, X, y, groups, cells, n_splits=5):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--results", default="results/rigged_decision_v5_all.json")
-    ap.add_argument("--out", default="probe_v5_centered", help="output file stem in results/")
+    ap.add_argument("--out", default="probe_v5_final", help="output file stem in results/")
     ap.add_argument("--acts", default="results/activations_v5.npz")
     ap.add_argument("--C", type=float, default=0.05, help="L2 strength (smaller = stronger)")
     ap.add_argument("--perms", type=int, default=100)
@@ -117,13 +125,20 @@ def main():
     y = np.array([0 if r["challenged"] else 1 for r in recs])
     cells = np.array([f"{r['condition']}|{r['bluffer']}" for r in recs])
     groups = np.array([f"{r['condition']}|{r['seed']}" for r in recs])
+    # Score pairs only within the same cell AND the same test fold. Each fold's
+    # model has its own intercept, set by the training fold's base rate, which
+    # is anti-correlated with the test fold's. Comparing across folds made the
+    # null sit below 0.5 (seen in run 2). Within a fold, that offset cancels.
+    folds = fold_ids(np.zeros(len(recs)), groups)
+    cells = np.array([f"{c}|fold{k}" for c, k in zip(cells, folds)])
+    train_cells = np.array([f"{r['condition']}|{r['bluffer']}" for r in recs])
     replies = [r["offer_reply"] or "" for r in recs]
     n_layers = acts.shape[1]
 
     print(f"{len(y)} trials from {CONDITIONS}; spared = {y.sum()}, challenged = {len(y) - y.sum()}")
     print("cells (spared / total):")
-    for c in np.unique(cells):
-        print(f"  {c:<16} {y[cells == c].sum()}/{(cells == c).sum()}")
+    for c in np.unique(train_cells):
+        print(f"  {c:<16} {y[train_cells == c].sum()}/{(train_cells == c).sum()}")
 
     # Words baseline: what her reply to Mike says
     word_scores = np.zeros(len(y))
@@ -131,7 +146,7 @@ def main():
         vec = TfidfVectorizer(ngram_range=(1, 2), min_df=2)
         Xtr = vec.fit_transform([replies[i] for i in train]).toarray()
         Xte = vec.transform([replies[i] for i in test]).toarray()
-        Xtr, Xte = center_by_cell(Xtr, Xte, cells[train], cells[test])
+        Xtr, Xte = center_by_cell(Xtr, Xte, train_cells[train], train_cells[test])
         m = LogisticRegression(C=1.0, max_iter=2000)
         m.fit(Xtr, y[train])
         word_scores[test] = m.predict_proba(Xte)[:, 1]
@@ -147,7 +162,7 @@ def main():
     print("\nlayer  within-cell AUC")
     for layer in range(n_layers):
         X = acts[:, layer, :].astype(np.float32)
-        s = oof_scores(probe_model, X, y, groups, cells)
+        s = oof_scores(probe_model, X, y, groups, train_cells)
         auc, _ = within_cell_auc(s, y, cells)
         layer_auc.append(auc)
         print(f"  {layer:3d}  {auc:.3f}  " + "#" * int(max(auc - 0.5, 0) * 80))
@@ -161,10 +176,10 @@ def main():
     null = []
     for i in range(args.perms):
         y_perm = y.copy()
-        for c in np.unique(cells):
-            idx = np.where(cells == c)[0]
+        for c in np.unique(train_cells):
+            idx = np.where(train_cells == c)[0]
             y_perm[idx] = rng.permutation(y_perm[idx])
-        s = oof_scores(probe_model, X, y_perm, groups, cells)
+        s = oof_scores(probe_model, X, y_perm, groups, train_cells)
         null.append(within_cell_auc(s, y_perm, cells)[0])
         if (i + 1) % 50 == 0:
             print(f"  permutations: {i + 1}/{args.perms}")
